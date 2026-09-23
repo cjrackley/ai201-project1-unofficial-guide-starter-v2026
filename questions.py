@@ -23,11 +23,11 @@ names a target of "4 of 5", and four of three is not a thing.
 
 QUESTIONS = [
     # {"question": "...", "expects": "..."},
-    {"question": "", "expects": ""},
-    {"question": "", "expects": ""},
-    {"question": "", "expects": ""},
-    {"question": "", "expects": ""},
-    {"question": "", "expects": ""},
+    {"question": "What pages are examples in the rulebook?", "expects": "pages 6 and 7"},
+    {"question": "Can Harbourmaster be played solo?", "expects": "yes"},
+    {"question": "Should I focus on getting coins or contracts?", "expects": "contracts, they yield more points."},
+    {"question": "What actions can I use during my turn?", "expects": "sail, load, sell, or hire"},
+    {"question": "What cargo types are accepted at the fourth port?", "expects": "fish and iron"},
 ]
 
 # Questions from a different world entirely. Your gate should refuse all five.

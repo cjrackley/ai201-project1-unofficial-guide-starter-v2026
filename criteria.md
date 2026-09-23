@@ -23,8 +23,8 @@ For at least 4 of my 5 test questions, the retrieved chunks include one that
 contains the answer.
 
 **Why this target:**
-<!-- e.g. "One of my questions is about a topic only two documents mention, so
-     I expect that one to be hard." -->
+
+The entire purpose of a chatbot that answers questions is that the responses have the answers in them. Without the answers, it would be a useless chatbot.
 
 ---
 
@@ -33,8 +33,8 @@ contains the answer.
 Every answer the system produces names at least one source document.
 
 **Why this target:**
-<!-- Why all five and not four? What about your setup makes that achievable —
-     or what would have to go wrong for it not to be? -->
+
+This is to make sure the answer is correct and actually came from somewhere
 
 ---
 
@@ -50,48 +50,33 @@ in at least 4 of 5 tries.
      just keep five of them, or the "4 of 5" above has nothing to be 4 of. -->
 
 **Why this target:**
-<!-- What did your distances look like when you set the cutoff in Milestone 4?
-     Was there a clean gap, or did the two groups overlap? -->
+It saves on resources and lets the user know the question can't be answered
 
 ---
 
 ## 4. Something about your chunks
 
-<!-- YOU WRITE THIS ONE.
-
-     How would you know if your chunks were the right size? Name something
-     countable or observable.
-
-     Examples of the right shape — don't copy these, they should come from
-     what you actually saw in Milestone 3:
-       - "At least 4 of 5 sampled chunks read as a complete thought, with no
-          sentence cut in half at either end."
-       - "No chunk is shorter than 200 characters, since anything below that
-          in my corpus turned out to be a heading with no content under it." -->
+<!-- 
+     Total character count from all chunks should not exceed 2000 characters
+-->
 
 
 
 **Why this target:**
 
-
+2000 characters is 400-500 words, plenty of room for explanation but not big enough to allow overcomplicated explanations
 
 ---
 
 ## 5. Your choice
 
-<!-- YOU WRITE THIS ONE TOO.
-
-     Pick something you actually care about getting right. It could be about
-     speed, about refusals, about a particular kind of question your corpus
-     handles badly, about source attribution being correct rather than merely
-     present — anything, as long as it names a number or an observable
-     outcome. -->
+<!-- I want the entire response to be a clean, well put together response. Source retrieved at the end. -->
 
 
 
 **Why this target:**
 
-
+The responses don't need to show sources twice, its redundant. The response needs to be grammatically correct so they can be understood.
 
 ---
 
