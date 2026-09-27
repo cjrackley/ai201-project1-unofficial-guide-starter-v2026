@@ -56,9 +56,8 @@ It saves on resources and lets the user know the question can't be answered
 
 ## 4. Something about your chunks
 
-<!-- 
      Total character count from all chunks should not exceed 2000 characters
--->
+
 
 
 

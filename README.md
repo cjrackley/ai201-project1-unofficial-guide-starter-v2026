@@ -1,7 +1,7 @@
 # The Unofficial Guide
 
-<!-- Replace this line with your name and which corpus you picked. -->
-
+Name: Cameron Rackley
+Corpus: practice - 26 chunks total
 > **This file is your submission.** Fill it in as you go — most sections get
 > written during the milestone that produces them, not at the end.
 >
@@ -53,30 +53,54 @@
 
      Milestone 3. -->
 
-**Chunk 1** — source: `` — produced by: ``
+**Chunk 36** — source:  `` — produced by: `chunker.py::split_documents`
 
-```
-```
+The last few turns
 
-**Chunk 2** — source: `` — produced by: ``
+The deck running out ends the game, so count what is left in it once it looks
+thin. A contract you cannot finish before the deck empties is worth one coin to
+discard and nothing to keep. Crew tokens are two points each if unspent, which
+means spending your last token to squeeze out a two-coin sale is exactly break
+even, and spending it to complete a contract is clearly worth it. Deciding that
+in advance is easier than deciding it under time pressure.
 
-```
-```
+**Chunk 19** — source: `board_game_port_reference.txt#0` — produced by: `chunker.py::split_documents`
 
-**Chunk 3** — source: `` — produced by: ``
 
-```
-```
+Which port accepts what
 
-**Chunk 4** — source: `` — produced by: ``
+The six ports each accept two cargo types, printed on the board. Reading from the start of the coast track: timber and salt; salt and wool; wool and fish; fish and iron; iron and timber; and the sixth port accepts any two types chosen at setup.
 
-```
-```
+The sixth port being flexible is what makes the far end of the track worth reaching.
 
-**Chunk 5** — source: `` — produced by: ``
+**Chunk 16** — source: `board_game_house_rules.txt#3` — produced by: `chunker.py::split_documents`
 
-```
-```
+
+Crew variants
+
+The most common house rule is starting with four crew tokens instead of three.
+It makes early turns more flexible and slightly cheapens the two points an
+unspent token is worth at the end, since there is one more of them. A table that
+finds the crew decision too painful will like it. A table that likes the
+decision should leave it alone, because the tension between using a token now
+and scoring it later is deliberate and is most of what the tokens are for.
+
+**Chunk 6** — source: `board_game_designer_notes.txt#0` — produced by: `chunker.py::split_documents`
+
+Why the rules are like this
+
+The two-action limit exists to keep turns short. An earlier version allowed three actions and games ran past two hours.
+
+Crew tokens scoring two points if unspent is deliberate tension: the tokens are most useful exactly when you can least afford to lose the points.
+
+**Chunk 2** — source: `board_game_common_errors.txt#0` — produced by: `produced by: chunker.py::split_documents`
+
+
+Rules people get wrong
+
+Hold capacity is three cards, not three of each type. Crew tokens give an extra action, not an extra turn.
+
+The market row is refilled immediately after a card is taken, not at the end of the turn. This matters more than it sounds.
 
 ## Sample Answer
 

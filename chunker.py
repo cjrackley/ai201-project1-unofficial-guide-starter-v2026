@@ -81,23 +81,47 @@ def fallback_split(
 
 
 def split_documents(documents: list[Document]) -> list[Chunk]:
-    """
-    Split documents into chunks. ⚠️ REPLACE THE BODY OF THIS IN MILESTONE 3.
+    chunks: list[Chunk] = []
+    for doc in documents:
+        blocks = [b.strip() for b in doc.text.split("\n\n") if b.strip()]
 
-    Right now it just calls the fallback. That is the plain, generic behaviour
-    the brief is talking about.
+        sections: list[str] = []
+        pending_heading = ""
+        for block in blocks:
+            if _is_heading(block):
+                pending_heading = block
+                continue
+            if pending_heading:
+                block = f"{pending_heading}\n\n{block}"
+                pending_heading = ""
+            sections.append(block)
+        if pending_heading:
+            sections.append(pending_heading)
 
-    When you write your own strategy, set `produced_by` to
-    "chunker.py::split_documents" so your README's Sample Chunks section names
-    the right function. `app.py chunks` prints that string for you.
+        # A short doc is one topic already; don't break it up.
+        if len(doc.text) <= config.SHORT_DOC_LENGTH:
+            sections = ["\n\n".join(blocks)]
 
-    Things worth thinking about before you write any code:
-      - Are your documents short posts or long guides?
-      - Is the useful information in one sentence, or spread over a paragraph?
-      - Would splitting on paragraph breaks keep more thoughts intact than
-        splitting on a character count?
-    """
-    return fallback_split(documents)
+        for index, section in enumerate(sections):
+            chunks.append(
+                Chunk(
+                    text=section,
+                    source=doc.source,
+                    index=index,
+                    produced_by="chunker.py::split_documents",
+                )
+            )
+
+    return chunks
+
+
+def _is_heading(block: str) -> bool:
+    """A short single line with no closing punctuation, like 'The opening'."""
+    return (
+        "\n" not in block
+        and len(block) < config.MAX_HEADING_LENGTH
+        and not block.endswith((".", "?", "!", ":"))
+    )
 
 
 def describe(chunks: list[Chunk]) -> str:

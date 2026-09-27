@@ -30,6 +30,9 @@ CORPUS = os.getenv("AI201_CORPUS", "practice")
 CHUNK_SIZE = 800        # characters per chunk
 CHUNK_OVERLAP = 120     # characters shared between neighbouring chunks
 
+MAX_HEADING_LENGTH = 80        # a single line shorter than this is a heading
+SHORT_DOC_LENGTH = 1000        # documents this size or smaller stay one chunk
+
 
 # ─── Retrieval (Milestone 4) ─────────────────────────────────────────────────
 
