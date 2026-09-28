@@ -29,8 +29,10 @@ Corpus: practice - 26 chunks total
 
 ## Chunking Strategy
 
-**Chunk size:**
-**Overlap:**
+**Chunk size: N/A**
+**Overlap: N/A**
+
+My chunking strategy is different from the chunk size and overlap. I asked claude what were some ways the chunks could be generated and we came up with a chunking strategy that works for the practice corpus. Chunks are split by the heading, there is always 1 heading with each chunk, a chunk ends when a double linebreak is detected after a punctuated sentence.
 
 <!-- What about YOUR documents made you pick these numbers? Short posts and
      long sectioned guides don't want the same chunking, and "800 seemed
@@ -93,7 +95,7 @@ The two-action limit exists to keep turns short. An earlier version allowed thre
 
 Crew tokens scoring two points if unspent is deliberate tension: the tokens are most useful exactly when you can least afford to lose the points.
 
-**Chunk 2** — source: `board_game_common_errors.txt#0` — produced by: `produced by: chunker.py::split_documents`
+**Chunk 2** — source: `board_game_common_errors.txt#0` — produced by: `chunker.py::split_documents`
 
 
 Rules people get wrong
@@ -108,14 +110,23 @@ The market row is refilled immediately after a card is taken, not at the end of 
      visible. Milestone 4. -->
 
 **Question:**
-
+ Should I focus on getting coins or contracts?
 **Answer:**
+Answer using only the documents above, and name the file you used.
+======================================================================
+
+You should focus on getting contracts rather than coins, because coins rarely decide a game while contracts usually do. 
+
+Source: `board_game_scoring_example.txt` (and similar information in `board_game_strategy_guide.txt`)
+
+Sources retrieved: board_game_rules_walkthrough.txt, board_game_scoring_example.txt, board_game_strategy_guide.txt
 
 ```
 ```
 
-**My relevance cutoff:**
+**My relevance cutoff: .65**
 
+My group of accepted questions only got up to .529, short of the cutoff. That was my more complicated question for the corpus, and since it met the cutoff I don't believe the cutoff needs to be shifted too much. I raised it to give just a little more room for relevance without going too far, since all the rejected questions had a distance of .87 or above
 <!-- The number you set in config.py, and how you got there.
 
      You ran five questions your corpus covers and the five in OUT_OF_SCOPE
@@ -126,8 +137,15 @@ The market row is refilled immediately after a card is taken, not at the end of 
      Milestone 4. -->
 
 | Question | In corpus? | Best distance |
-|---|---|---|
-|  |  |  |
+|what pages are examples in the rulebook?|yes|.481|
+|Can Harbourmaster be played solor?| yes |.296|
+|Should I focus on getting coints or contracts?|yes|.529|
+|What actions can i use during my turn?|yes|.445|
+|What cargo types are accepted at the fourth port?|yes|.280|
+|what is the capital of mongolia?|no|.967|
+|How do I change the oil in a diesel engine?|no|.873|
+|Who won the 1994 World Cup?|no|.876|
+|what is the recommended dosage of ibuprofen for a headache?|no|.875|
 
 ## How I Used AI
 
