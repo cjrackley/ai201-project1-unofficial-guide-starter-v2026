@@ -27,6 +27,8 @@ Corpus: practice - 26 chunks total
 
      Milestone 5. -->
 
+This is a RAG system that uses a library of information called a corpus. The system breaks the corpus library into chunks for it to be easily readable by the system. Asking a question related to the corpus library should result in a valid answer, if a question is too vague, off topic or the corpus doesn't have adequate information to be answered, it will be rejected.
+
 ## Chunking Strategy
 
 **Chunk size: N/A**
@@ -159,9 +161,9 @@ My group of accepted questions only got up to .529, short of the cutoff. That wa
      Milestone 5. -->
 
 **1.**
-
+I asked claude to explain the syntax of the chunker and ways I could change it. It explained each line of code along with the parameters and where the data was coming from and going to. This led into the next use of claude for this assignment.
 **2.**
-
+I asked claude what the best chunking size would fit the practice corpus best. It told me the best chunking size would be 800 and the overlap be 300, with these set it would lead to fewer chunks with useless information. I didn't feel like it fit right, so I asked claude to find a better way to chunk the corpus. It came up with the method of starting every chunk with a header with its respective data, which is where it would end.
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never
      claims earns nothing.
