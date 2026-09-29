@@ -191,15 +191,65 @@ I asked claude what the best chunking size would fit the practice corpus best. I
 
 | Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
 |---|---|---|---|---|---|
-| 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
-| 2. Every answer names a source | 5 of 5 |  |  |  |  |
-| 3. Gate stops out-of-corpus questions | 4 of 5 |  |  |  |  |
-| 4. | | | | | |
-| 5. | | | | | |
+| 1. Retrieved chunk contains the answer | 5 of 5 | 5 of 5 | 5 of 5 | 5 of 5 | MET |
+| 2. Every answer names a source | 5 of 5 | 5 of 5 | 5 of 5 | 5 of 5 | MET |
+| 3. Gate stops out-of-corpus questions | 4 of 5 | 5 of 5 | 5 of 5 | 5 of 5 | MET |
+| 4. Total character count from all chunks should not exceed 2000 characters| 4 of 5 | 4 of 5 | 4 of 5 | 4 of 5 | MET |
+| 5. Responses are well put together, with sources just at the end.| 4 of 5| 3 of 5 | 4 of 5| 0 of 5 | MISSED |
 
 <!-- Underneath, paste the REAL output for each criterion from one of your
      runs — the actual text your system produced, not a description of it.
      Name the file and function that produced it. -->
+
+1. What pages are examples in the rulebook? — run 1
+
+- Best distance: 0.4808 (passed the gate)
+- Sources retrieved: board_game_components.txt, board_game_history.txt, board_game_house_rules.txt, board_game_rules_walkthrough.txt, board_game_teaching_new_players.txt
+
+
+Pages six and seven are examples in the rulebook (from board_game_components.txt and board_game_teaching_new_players.txt).
+
+output contains a chunk with the answer
+
+2. Can Harbourmaster be played solo? — run 1
+
+- Best distance: 0.2962 (passed the gate)
+- Sources retrieved: board_game_rules_walkthrough.txt, board_game_scoring.txt, board_game_setup.txt, board_game_solo.txt, board_game_variants.txt
+
+
+Yes, Harbourmaster can be played solo by playing with two boats and alternating turns between them to try to score more than 40 points across both. 
+
+Source: `board_game_solo.txt`
+
+output contains a named source
+
+3. The relevance gate on out-of-corpus questions
+
+Produced by `run_eval.py::check_out_of_scope`, cutoff 0.65. Refused 5 of 5.
+
+output contains evidence of out of scope questions being refused
+
+4. Should I focus on getting coins or contracts? — run 1
+
+- Best distance: 0.5292 (passed the gate)
+- Sources retrieved: board_game_rules_walkthrough.txt, board_game_scoring_example.txt, board_game_strategy_guide.txt
+
+
+You should focus on getting contracts rather than coins, as coins rarely decide a game while contracts usually do. 
+
+Source: board_game_scoring_example.txt (and also mentioned in board_game_strategy_guide.txt)
+
+Total sum of chunk characters used for this result is 2,076, above 2,000 characters allowed failing the criterion.
+
+5. Should I focus on getting coins or contracts? — run 3
+
+- Best distance: 0.5292 (passed the gate)
+- Sources retrieved: board_game_rules_walkthrough.txt, board_game_scoring_example.txt, board_game_strategy_guide.txt
+
+
+You should focus on getting contracts rather than coins. Coins rarely decide a game, whereas contracts usually do (board_game_scoring_example.txt). Between one more sale and one more delivery, you should deliver (board_game_strategy_guide.txt).
+
+Output contains sources throughout the explanation, not just at the end, so this fails the criterion
 
 ## Verdicts
 
@@ -259,8 +309,8 @@ I asked claude what the best chunking size would fit the practice corpus best. I
 | 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
 | 2. Every answer names a source | 5 of 5 |  |  |  |  |
 | 3. Gate stops out-of-corpus questions | 4 of 5 |  |  |  |  |
-| 4. | | | | | |
-| 5. | | | | | |
+| 4. Total character count from all chunks should not exceed 2000 characters| | | | | |
+| 5. Responses are well put together, with sources just at the end.| | | | | |
 
 **Did it help?**
 
