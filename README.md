@@ -295,9 +295,9 @@ Output contains sources throughout the explanation, not just at the end, so this
 ## The Improvement
 
 **What I changed:**
-
+     I changed the rule 'Name the document your answer came from, using the filename given in each excerpt.' to 'After your answer, on its own line, write "Source: " followed by the filenames your answer was derived from.' 
 **Why I picked it:**
-
+     I thought it needed to be more specific so the ai didn't assume/choose on it's own where they should go within the response.
 <!-- Connect it to a specific diagnosis above in one sentence. If you can't,
      you picked a fix because it sounded impressive. -->
 
@@ -308,11 +308,11 @@ Output contains sources throughout the explanation, not just at the end, so this
 
 | Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
 |---|---|---|---|---|---|
-| 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
-| 2. Every answer names a source | 5 of 5 |  |  |  |  |
-| 3. Gate stops out-of-corpus questions | 4 of 5 |  |  |  |  |
-| 4. Total character count from all chunks should not exceed 2000 characters| | | | | |
-| 5. Responses are well put together, with sources just at the end.| | | | | |
+| 1. Retrieved chunk contains the answer | 4 of 5 | 5 of 5 | 5 of 5 | 5 of 5 | MET |
+| 2. Every answer names a source | 5 of 5 | 5 of 5 | 5 of 5 | 5 of 5 | MET |
+| 3. Gate stops out-of-corpus questions | 4 of 5 | 5 of 5 | 5 of 5 | 5 of 5 | MET |
+| 4. Total character count from all chunks should not exceed 2000 characters| 4 of 5 | 4 of 5| 4 of 5| 4 of 5 | MET |
+| 5. Responses are well put together, with sources just at the end.| 4 of 5| 5 of 5 | 5 of 5 | 5 of 5 | MET |
 
 **Did it help?**
 
@@ -323,6 +323,8 @@ Output contains sources throughout the explanation, not just at the end, so this
 
      Milestone 4. -->
 
+     It completely fixed the issue. The first log shows 7 of 15 had a seperate source line, now all 15 have a seperate source line.
+
 ## What's Still Broken
 
 <!-- For each criterion still missed after your fix: what you'd do about it,
@@ -332,6 +334,7 @@ Output contains sources throughout the explanation, not just at the end, so this
      not.
 
      Milestone 5. -->
+     
 
 ## What I'd Do Differently
 
