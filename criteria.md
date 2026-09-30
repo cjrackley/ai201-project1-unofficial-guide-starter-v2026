@@ -56,10 +56,9 @@ It saves on resources and lets the user know the question can't be answered
 
 ## 4. Something about your chunks
 
-     Total character count from all chunks should not exceed 2000 characters
+     ORIGINAL: Total character count from all chunks should not exceed 2000 characters
 
-
-
+     REVISED: Total character count from all retrieved chunks for a response should not exceed 2000 characters; Changed wording to make slightly more sense.
 
 **Why this target:**
 
@@ -69,9 +68,9 @@ It saves on resources and lets the user know the question can't be answered
 
 ## 5. Your choice
 
-<!-- I want the entire response to be a clean, well put together response. Source retrieved at the end. -->
+     ORIGINAL: I want the entire response to be a clean, well put together response. Source retrieved at the end.
 
-
+     REVISED: Responses should be complete sentences with no inline sources. All sources cited after response answer; revised to give better clarification of what a "clean" response is.
 
 **Why this target:**
 

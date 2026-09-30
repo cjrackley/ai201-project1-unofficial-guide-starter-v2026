@@ -264,11 +264,11 @@ Output contains sources throughout the explanation, not just at the end, so this
 
 | # | Criterion | Verdict | How I decided |
 |---|---|---|---|
-| 1 |  |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
-| 4 |  |  |  |
-| 5 |  |  |  |
+| 1 | Retrieved chunk contains the answer | MET | Every answer contains a chunk with the answer |
+| 2 | Every answer names a source | MET | Every answer either names a source inline or after the explanation |
+| 3 | Gate stops out-of-corpus questions | MET | All 5 out of scope questions were rejected |
+| 4 | Total character count from all chunks should not exceed 2000 characters | MET | Only 1 of 5 responses contained chunks that exceeded the 2,000 character sum |
+| 5 | Responses are well put together, with sources just at the end | MISSED | The entire 3rd run gave explanations with 1 or more inline sources, which muddy the answer, so it fails. |
 
 ## Diagnoses
 
