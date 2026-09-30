@@ -290,6 +290,8 @@ Output contains sources throughout the explanation, not just at the end, so this
 
      Milestone 3. -->
 
+     The only criterion missed was #5. The criterion almost entirely relies on the "chat" part of the bot. This is why it's happening accross all questions throughout the 3 runs, because it's not dependant on the answer itself. This leads me to believe the cause of these missing comes from the generation stage, specifically the grounding instructions. One of the rules is 'Name the document your answer came from, using the filename given in each excerpt.' which isn't specific on where the sources should be placed.
+
 ## The Improvement
 
 **What I changed:**
