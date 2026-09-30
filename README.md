@@ -164,6 +164,8 @@ My group of accepted questions only got up to .529, short of the cutoff. That wa
 I asked claude to explain the syntax of the chunker and ways I could change it. It explained each line of code along with the parameters and where the data was coming from and going to. This led into the next use of claude for this assignment.
 **2.**
 I asked claude what the best chunking size would fit the practice corpus best. It told me the best chunking size would be 800 and the overlap be 300, with these set it would lead to fewer chunks with useless information. I didn't feel like it fit right, so I asked claude to find a better way to chunk the corpus. It came up with the method of starting every chunk with a header with its respective data, which is where it would end.
+**3.**
+During unit 2, I mostly used my chat sessions to check things that would otherwise take me a lot longer to do. For the first prompt I asked to check the char size of every chunk retrieved for a question and take the sum of all of them. This was so I could find out which questions met or missed the 4th criterion. It helped me find that the 4th question always retrieves 5 chunks with a total of 2,076 chars, missing the mark. The next was to mark each question's response as either having an inline source or a source line. This was done so I didn't have to scroll through each of the responses; they are hard to read for me due sometimes because of the inline source responses. It also pointed out the inline sources were formatted differently as well. This led to my assumption the generate phase was to blame and needed to be adjusted.
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never
      claims earns nothing.
@@ -335,10 +337,12 @@ Output contains sources throughout the explanation, not just at the end, so this
 
      Milestone 5. -->
      
-
+     The 4th criterion still has some wiggle room with improvements that I have not looked into further as of yet.
 ## What I'd Do Differently
 
 <!-- Knowing what you know now — which of your five criteria would you write
      differently, and why?
 
      Milestone 5. -->
+
+     I would be more specifc/thorough with my 5th criterion. I revised it already to be more specifc but it doesn't really test that much. Right now it specifies the source should be printed at the end but doesn't go into depth to what a "clean" sentence/response is.
